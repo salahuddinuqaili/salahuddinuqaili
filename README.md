@@ -1,4 +1,6 @@
-## Hey, I'm Salahuddin
+<p align="center">
+  <img src="https://raw.githubusercontent.com/salahuddinuqaili/salahuddinuqaili/main/banner.svg" alt="Salahuddin Uqaili" width="100%"/>
+</p>
 
 Associate Product Manager at **Delivery Hero** in Berlin. Outside of work, I build apps by orchestrating AI — designing the architecture, making the trade-off calls, and directing AI agents to write the implementation.
 
@@ -6,7 +8,7 @@ Each project is a deliberate choice to explore a different stack and architectur
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=typescript,react,nextjs,electron,python,docker&theme=dark" />
+    <img src="https://skillicons.dev/icons?i=typescript,react,nextjs,electron,rust,python,docker&theme=dark" />
   </a>
 </p>
 
@@ -18,6 +20,11 @@ Each project is a deliberate choice to explore a different stack and architectur
 - Chose IPC as the security boundary — API keys never touch the renderer process
 - Multi-provider LLM routing with priority fallback for zero vendor lock-in
 - Zustand over Redux — minimal boilerplate, independently testable slices
+
+**[Pulse](https://github.com/salahuddinuqaili/pulse)** — GPU performance monitor for systems running both gaming and local AI workloads. Answers "what can my GPU do right now?" with VRAM process maps and headroom indicators. ~10MB installer, ~30MB RAM.
+- Tauri 2 over Electron — native Rust backend for GPU polling at a fraction of the footprint
+- NVML integration in Rust for direct hardware access without Node.js overhead
+- Zustand with ring buffer for time-series state — fixed-size buffer instead of growing arrays
 
 **[Skillich](https://github.com/salahuddinuqaili/skillich)** — 815 skills across 68 roles, each rated for AI impact. Python SDK with MCP server, OpenAI/Anthropic adapters, and CLI.
 - Agent-first architecture — primary consumers are AI tools (MCP, function calling), the web app is a generated artifact
