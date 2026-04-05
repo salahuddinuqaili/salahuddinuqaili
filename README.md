@@ -30,10 +30,6 @@ Each project is a deliberate choice to explore a different stack and architectur
 
 ---
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=salahuddinuqaili&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
-</p>
-
 ### Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-salahuddinuqaili-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/salahuddinuqaili)
