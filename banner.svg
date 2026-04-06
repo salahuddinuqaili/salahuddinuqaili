@@ -36,7 +36,7 @@
   <text x="400" y="78" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600" fill="#e6edf3" text-anchor="middle" filter="url(#softglow)">Salahuddin Uqaili</text>
 
   <!-- tagline -->
-  <text x="400" y="115" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#00d4ff" text-anchor="middle" letter-spacing="2" opacity="0.75">PM BY DAY &#xB7; AI ARCHITECT BY NIGHT</text>
+  <text x="400" y="115" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#00d4ff" text-anchor="middle" letter-spacing="2" opacity="0.75">PM BY DAY &#xB7; AI BUILDER BY NIGHT</text>
 
   <!-- bottom accent line -->
   <rect x="100" y="174" width="600" height="1.5" rx="1" fill="url(#bottomline)"/>
