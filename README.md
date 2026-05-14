@@ -14,21 +14,26 @@ Associate Product Manager at **Delivery Hero** in Berlin, working on logistics C
 
 ### What I've explored
 
-**[Pulse](https://github.com/salahuddinuqaili/pulse)** — GPU performance monitor for systems running gaming and local AI workloads.
-*Tauri 2, Rust, React · Still in design/spec phase*
-Learned: Framework evaluation (chose Tauri over Electron after building Neon — documented the tradeoffs), Rust backend for direct hardware access via NVML, real-time data patterns (ring buffers, tiered polling).
+**[Pulse](https://github.com/salahuddinuqaili/pulse)** — GPU performance monitor for systems running gaming and local AI workloads. *Still in design/spec phase.*
+- Chose Tauri 2 over Electron after building Neon — documented the tradeoffs
+- Rust backend for direct hardware access via NVML
+- Real-time data patterns: ring buffers, tiered polling by data volatility
 
-**[Neon Protocol IDE](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE for navigating codebases through visual architecture maps and conversational AI.
-*Electron, Next.js, React · 20 releases shipped*
-Learned: IPC security boundaries (API keys never touch the renderer), multi-provider LLM routing with priority fallback, state management with Zustand (6 domain slices). Most complete exploration — 9,800+ LOC, 38 IPC handlers, 8 documented architecture decisions.
+**[Neon Protocol IDE](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE for navigating codebases through visual architecture maps and conversational AI. *20 releases shipped.*
+- IPC as the security boundary — API keys never touch the renderer process
+- Multi-provider LLM routing with priority fallback for zero vendor lock-in
+- Zustand over Redux — 6 domain slices, independently testable
+- Most complete exploration: 9,800+ LOC, 38 IPC handlers, 8 documented ADRs
 
-**[Skillich](https://github.com/salahuddinuqaili/skillich)** — 1,028 skills across 88 roles, each rated for AI impact. Python SDK with MCP server, OpenAI/Anthropic adapters, and CLI.
-*Python, FastMCP · Published on PyPI*
-Learned: MCP server design, agent-first architecture (AI tools are the primary consumers, not humans), multi-format function calling (OpenAI/Anthropic/MCP adapters), YAML taxonomy for contributor-friendly data.
+**[Skillich](https://github.com/salahuddinuqaili/skillich)** — 1,028 skills across 88 roles, each rated for AI impact. Python SDK with MCP server, OpenAI/Anthropic adapters, and CLI. *Published on PyPI.*
+- Agent-first architecture — AI tools are the primary consumers, not humans
+- MCP server design with multi-format function calling (OpenAI/Anthropic/MCP adapters)
+- YAML taxonomy over a database so contributors can submit PRs, not SQL
 
-**[RAG Starter](https://github.com/salahuddinuqaili/rag-starter)** — Your first RAG pipeline. Local with Ollama, no frameworks, no API keys, 15 minutes.
-*Python, Ollama, Streamlit · 42 tests*
-Learned: RAG fundamentals without frameworks (no LangChain — every line readable), text chunking strategy (hand-written recursive splitter), local-first AI architecture, educational software design (Groq free tier so beginners skip the credit card).
+**[RAG Starter](https://github.com/salahuddinuqaili/rag-starter)** — Your first RAG pipeline. Local with Ollama, no frameworks, no API keys, 15 minutes. *42 tests.*
+- Framework-free by design — no LangChain or LlamaIndex, so every line is readable
+- Hand-written recursive text splitter (most RAG failures stem from chunking)
+- Groq free tier for Colab — beginners shouldn't need a credit card
 
 ---
 
