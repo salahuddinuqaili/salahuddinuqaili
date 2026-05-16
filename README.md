@@ -14,11 +14,6 @@ Associate Product Manager at **Delivery Hero** in Berlin, working on logistics C
 
 ### What I've explored
 
-**[Pulse](https://github.com/salahuddinuqaili/pulse)** — GPU performance monitor for systems running gaming and local AI workloads. *Still in design/spec phase.*
-- Chose Tauri 2 over Electron after building Neon — documented the tradeoffs
-- Rust backend for direct hardware access via NVML
-- Real-time data patterns: ring buffers, tiered polling by data volatility
-
 **[Neon Protocol IDE](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE for navigating codebases through visual architecture maps and conversational AI. *20 releases shipped.*
 - IPC as the security boundary — API keys never touch the renderer process
 - Multi-provider LLM routing with priority fallback for zero vendor lock-in
@@ -40,6 +35,11 @@ Associate Product Manager at **Delivery Hero** in Berlin, working on logistics C
 - Framework-free by design — no LangChain or LlamaIndex, so every line is readable
 - Hand-written recursive text splitter (most RAG failures stem from chunking)
 - Groq free tier for Colab — beginners shouldn't need a credit card
+
+**[Pulse](https://github.com/salahuddinuqaili/pulse)** — GPU performance monitor for systems running gaming and local AI workloads. *Still in design/spec phase.*
+- Chose Tauri 2 over Electron after building Neon — documented the tradeoffs
+- Rust backend for direct hardware access via NVML
+- Real-time data patterns: ring buffers, tiered polling by data volatility
 
 ---
 
