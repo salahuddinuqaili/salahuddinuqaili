@@ -14,6 +14,12 @@ Associate Product Manager at **Delivery Hero** in Berlin, working on logistics C
 
 ### What I've explored
 
+**[MCP Studio](https://github.com/salahuddinuqaili/mcp-studio)** — Developer toolkit for MCP servers: connect, explore, execute, and validate. Postman + ESLint for MCP. *Core features working.*
+- WebSocket proxy architecture — browsers can't hold MCP connections, so the backend bridges them
+- Auto-generated forms from tool schemas, resource reader, prompt renderer
+- Persistent call history + collections (save and replay groups of requests)
+- TypeScript monorepo: React SPA + Hono backend + SQLite + CLI (pnpm workspaces)
+
 **[Neon Protocol IDE](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE for navigating codebases through visual architecture maps and conversational AI. *20 releases shipped.*
 - IPC as the security boundary — API keys never touch the renderer process
 - Multi-provider LLM routing with priority fallback for zero vendor lock-in
@@ -24,12 +30,6 @@ Associate Product Manager at **Delivery Hero** in Berlin, working on logistics C
 - Agent-first architecture — AI tools are the primary consumers, not humans
 - MCP server design with multi-format function calling (OpenAI/Anthropic/MCP adapters)
 - YAML taxonomy over a database so contributors can submit PRs, not SQL
-
-**[MCP Studio](https://github.com/salahuddinuqaili/mcp-studio)** — Developer toolkit for MCP servers: interactive playground, compliance scanner, and CI-ready CLI. *Early development.*
-- Identified a tooling gap in the MCP ecosystem (85K+ stars on servers, zero quality dev tools)
-- WebSocket proxy architecture — browsers can't hold MCP connections, so the backend bridges them
-- Compliance engine: 18+ protocol/quality/security rules with A-F scoring
-- TypeScript monorepo: React SPA + Hono backend + CLI (pnpm workspaces)
 
 **[RAG Starter](https://github.com/salahuddinuqaili/rag-starter)** — Your first RAG pipeline. Local with Ollama, no frameworks, no API keys, 15 minutes. *42 tests.*
 - Framework-free by design — no LangChain or LlamaIndex, so every line is readable
