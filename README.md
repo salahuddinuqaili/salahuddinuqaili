@@ -14,11 +14,11 @@ Associate Product Manager at **Delivery Hero** in Berlin, working on logistics C
 
 ### What I've explored
 
-**[MCP Studio](https://github.com/salahuddinuqaili/mcp-studio)** — Developer toolkit for MCP servers: connect, explore, execute, and validate. Postman + ESLint for MCP. *Core features working.*
-- WebSocket proxy architecture — browsers can't hold MCP connections, so the backend bridges them
+**[MCP Studio](https://github.com/salahuddinuqaili/mcp-studio)** — Developer toolkit for MCP servers: connect, explore, execute, and validate. Postman + ESLint for MCP. *All phases shipped, 15 tests.*
+- Compliance scanner: 16 rules across protocol/quality/security, A-F grading, CI-ready CLI
 - Auto-generated forms from tool schemas, resource reader, prompt renderer
 - Persistent call history + collections (save and replay groups of requests)
-- TypeScript monorepo: React SPA + Hono backend + SQLite + CLI (pnpm workspaces)
+- WebSocket proxy architecture — browsers can't hold MCP connections, so the backend bridges them
 
 **[Neon Protocol IDE](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE for navigating codebases through visual architecture maps and conversational AI. *20 releases shipped.*
 - IPC as the security boundary — API keys never touch the renderer process
