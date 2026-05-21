@@ -16,30 +16,31 @@ Associate Product Manager at **Delivery Hero** in Berlin, working on logistics C
 
 **[MCP Studio](https://github.com/salahuddinuqaili/mcp-studio)** — Developer toolkit for MCP servers: connect, explore, execute, and validate. Postman + ESLint for MCP. *All phases shipped, 15 tests.*
 - Compliance scanner: 16 rules across protocol/quality/security, A-F grading, CI-ready CLI
-- Auto-generated forms from tool schemas, resource reader, prompt renderer
-- Persistent call history + collections (save and replay groups of requests)
 - WebSocket proxy architecture — browsers can't hold MCP connections, so the backend bridges them
 
-**[Neon Protocol IDE](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE for navigating codebases through visual architecture maps and conversational AI. *20 releases shipped.*
-- IPC as the security boundary — API keys never touch the renderer process
-- Multi-provider LLM routing with priority fallback for zero vendor lock-in
-- Zustand over Redux — 6 domain slices, independently testable
-- Most complete exploration: 9,800+ LOC, 38 IPC handlers, 8 documented ADRs
+**[Neon Protocol IDE](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE for navigating codebases through visual architecture maps and conversational AI. *20 releases, most complete exploration.*
+- IPC as the security boundary — API keys never touch the renderer; 38 handlers route all privileged ops
+- Multi-provider LLM routing with priority fallback; Zustand over Redux with 6 domain slices
+
+**[Pulse](https://github.com/salahuddinuqaili/pulse)** — GPU performance monitor for systems running gaming and local AI workloads. Tauri 2 + Rust. *Active exploration, v0.3.1.*
+- Tauri 2 over Electron — 3-6x memory reduction matters for a tool monitoring resource-hungry workloads
+- Rust backend for direct GPU access via NVML; tiered polling (1s/2s/5s) by data volatility
 
 **[Skillich](https://github.com/salahuddinuqaili/skillich)** — 1,028 skills across 88 roles, each rated for AI impact. Python SDK with MCP server, OpenAI/Anthropic adapters, and CLI. *Published on PyPI.*
-- Agent-first architecture — AI tools are the primary consumers, not humans
-- MCP server design with multi-format function calling (OpenAI/Anthropic/MCP adapters)
-- YAML taxonomy over a database so contributors can submit PRs, not SQL
+- Agent-first architecture — AI tools are the primary consumers; auto-exports to OpenAI/Anthropic/MCP formats
+- YAML taxonomy over a database so contributors submit PRs, not SQL
+
+**[Sprint Narrator](https://github.com/salahuddinuqaili/sprint-narrator)** — AI sprint summary generator that pulls from Linear, Jira, and GitHub to create narrative reports via local LLMs. *74 tests.*
+- Async pipeline with model-tier adaptation — adjusts prompts based on which Ollama model is available
+- Smart categorization (shipped, bug fixes, in progress, blocked) with dedup across sources
+
+**[DecisionLog](https://github.com/salahuddinuqaili/decisionlog)** — CLI for managing Architecture Decision Records with git integration, search, and HTML reports. *30+ tests.*
+- 9 commands with git integration — decisions link to the commits that implement them
+- HTML reports with TOC and status badges; keyword search across decision history
 
 **[RAG Starter](https://github.com/salahuddinuqaili/rag-starter)** — Your first RAG pipeline. Local with Ollama, no frameworks, no API keys, 15 minutes. *42 tests.*
-- Framework-free by design — no LangChain or LlamaIndex, so every line is readable
-- Hand-written recursive text splitter (most RAG failures stem from chunking)
-- Groq free tier for Colab — beginners shouldn't need a credit card
-
-**[Pulse](https://github.com/salahuddinuqaili/pulse)** — GPU performance monitor for systems running gaming and local AI workloads. *Still in design/spec phase.*
-- Chose Tauri 2 over Electron after building Neon — documented the tradeoffs
-- Rust backend for direct hardware access via NVML
-- Real-time data patterns: ring buffers, tiered polling by data volatility
+- Framework-free by design — no LangChain or LlamaIndex, so every layer is readable and modifiable
+- Hand-written recursive text splitter; Groq free tier for Colab so beginners don't need a credit card
 
 ---
 
@@ -47,8 +48,8 @@ Associate Product Manager at **Delivery Hero** in Berlin, working on logistics C
 
 - **AI-directed development** — every project built by orchestrating Claude Code, not manual coding
 - **Documented trade-offs** — each repo has a DECISIONS.md explaining what was chosen, rejected, and why
-- **Local-first architecture** — all projects work without cloud dependencies
-- **Multi-interface design** — CLI, web, and agents share a single core (no logic duplication)
+- **Local-first architecture** — every project works without cloud dependencies or API keys
+- **Multi-interface design** — CLI, web, desktop, and agents share a single core (no logic duplication)
 
 ---
 
