@@ -2,54 +2,51 @@
   <img src="https://raw.githubusercontent.com/salahuddinuqaili/salahuddinuqaili/main/banner.svg" alt="Salahuddin Uqaili" width="100%"/>
 </p>
 
-Associate Product Manager at **Delivery Hero** in Berlin, working on logistics CX products at scale. Outside of work, I explore what a PM can build when AI writes the code — I design the architecture, make the trade-off calls, and direct AI agents to handle the implementation. Lately that's meant moving up a level: from steering a single coding agent to orchestrating autonomous agents that take a tool from spec to tested, CI-checked code while I own the architecture, guardrails, and trade-off calls. Each project is an exploration that's taught me how AI orchestration, MCP servers, and agentic workflows actually work under the hood.
+**Product Manager at Delivery Hero**, Berlin — logistics CX products at scale.
+
+Off the clock, I don't just *use* AI agents. **I build the factory that runs them.** I design the system — a local-first coding agent, its memory layer, an orchestrator that runs on my own GPU, and a type-checker that turns an agent's authority, cost, and lineage into compile-time facts — then direct the agents to build the pieces while I own the architecture, the guardrails, and the trade-off calls. I can't write the code by hand. I can specify it, direct it, and tell you exactly why every trade-off went the way it did.
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,react,typescript,electron,tauri,rust,docker,github&theme=dark" />
+    <img src="https://skillicons.dev/icons?i=python,rust,typescript,react,tauri,electron,docker,github&theme=dark" />
   </a>
 </p>
 
 ---
 
-### What I've explored
+### The system I architected
 
-**[MCP Studio](https://github.com/salahuddinuqaili/mcp-studio)** — Developer toolkit for MCP servers: connect, explore, execute, and validate. Postman + ESLint for MCP. *All phases complete, 15 tests.*
-- Compliance scanner: 16 rules across protocol/quality/security, A-F grading, CI-ready CLI
-- WebSocket proxy architecture — browsers can't hold MCP connections, so the backend bridges them
+A private, local-first agent stack I designed and directed — happy to walk through it in a conversation:
 
-**[Neon Protocol IDE](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE for navigating codebases through visual architecture maps and conversational AI. *21 releases, most complete exploration.*
-- IPC as the security boundary — API keys never touch the renderer; 35 handlers route all privileged ops
-- Multi-provider LLM routing with priority fallback; Zustand over Redux with 6 domain slices
+- **The agent** — an LLM-agnostic, approval-gated coding agent in Rust: multi-provider routing with logged decisions, a fallback tool-protocol for models without native tool use, git-shadow-ref checkpoints and one-command undo.
+- **The memory** — a git-backed, local-first knowledge base and shared-memory contract that agents read and write over MCP.
+- **The guardrail** — an experimental agentic language whose type-checker won't let an agent compile if it exceeds the authority or budget it was granted. Authority, cost, and lineage become *compile-time facts*, not runtime hopes.
+- **The orchestrator** — a worktree-per-agent design that assigns work to a bench of specialists, with cost accounting and provenance built in.
 
-**[Pulse](https://github.com/salahuddinuqaili/pulse)** — GPU performance monitor for systems running gaming and local AI workloads. Tauri 2 + Rust. *Exploration, v0.3.1.*
-- Tauri 2 over Electron — a ~30MB memory footprint matters for a tool that itself monitors resource-hungry workloads
-- Rust backend for direct GPU access via NVML; tiered polling (1s/2s/5s) by data volatility
+### The proof it runs
 
-**[Skillich](https://github.com/salahuddinuqaili/skillich)** — 1,028 skills across 88 roles, each rated for AI impact. Python SDK with MCP server, OpenAI/Anthropic adapters, and CLI. *Installable from source.*
-- Agent-first architecture — AI tools are the primary consumers; auto-exports to OpenAI/Anthropic/MCP formats
-- YAML taxonomy over a database so contributors submit PRs, not SQL
+**[llm-autobench](https://github.com/salahuddinuqaili/llm-autobench)** — Autonomous benchmarking harness: discovers, pulls, benchmarks, judges, and deletes local models on a cron on my own RTX 5070. The commit history *is* the pipeline running itself.
 
-**[Sprint Narrator](https://github.com/salahuddinuqaili/sprint-narrator)** — AI sprint summary generator that pulls from Linear, Jira, and GitHub to create narrative reports via local LLMs, now with velocity-trend tracking. *86 tests.*
-- Async pipeline with model-tier adaptation — adjusts prompts based on which Ollama model is available
-- Smart categorization (shipped, bug fixes, in progress, blocked) with dedup across sources; velocity trends persisted to a local SQLite archive
+**[tether](https://github.com/salahuddinuqaili/tether)** — An iPhone PWA that talks to my local + cloud models over Tailscale. No backend, no App Store, no Mac — editor, GitHub commit, and multi-chat, all browser-direct.
 
-**[DecisionLog](https://github.com/salahuddinuqaili/decisionlog)** — CLI for managing Architecture Decision Records with git integration, search, and HTML reports. *90+ tests.*
-- 11 commands with git integration — decisions link to the commits that implement them
-- HTML reports with TOC and status badges; keyword search across decision history
+**[changelog-genie](https://github.com/salahuddinuqaili/changelog-genie)** — Commits and PRs → clean, categorized changelogs via local LLMs. Packaged as a GitHub Action; nothing leaves your machine.
 
-**[RAG Starter](https://github.com/salahuddinuqaili/rag-starter)** — A local-first RAG web app: drag-and-drop your documents, get streaming answers with citations and chat history. FastAPI + React, runs on Ollama with no API keys. *42 tests.*
-- Framework-free RAG core — no LangChain or LlamaIndex, so every retrieval layer is readable and modifiable
-- Hand-written recursive text splitter; Groq free tier for the Colab notebook so beginners don't need a credit card
+**[benchviz](https://github.com/salahuddinuqaili/benchviz)** — Turns messy LLM benchmark JSON into a static, interactive dashboard: leaderboard, capability radar, model×task heatmap, regression detection. Zero server, zero API keys.
+
+**[neon-protocol-ide](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE that opens a codebase as an interactive architecture map with conversational AI. 21 releases; IPC as the security boundary so API keys never touch the renderer.
+
+**[skillich](https://github.com/salahuddinuqaili/skillich)** — 1,028 skills across 88 roles, each rated for AI impact. Python SDK + MCP server + OpenAI/Anthropic adapters + CLI. Agent-first by design.
+
+*Also public: [pulse](https://github.com/salahuddinuqaili/pulse) (Rust/Tauri GPU monitor), [rag-starter](https://github.com/salahuddinuqaili/rag-starter), [mcp-studio](https://github.com/salahuddinuqaili/mcp-studio), [sprint-narrator](https://github.com/salahuddinuqaili/sprint-narrator), [decisionlog](https://github.com/salahuddinuqaili/decisionlog).*
 
 ---
 
 ### What ties them together
 
-- **AI-directed development** — every project built by orchestrating Claude Code, not manual coding
-- **Documented trade-offs** — each repo has a DECISIONS.md explaining what was chosen, rejected, and why
-- **Local-first architecture** — every project works without cloud dependencies or API keys
-- **Multi-interface design** — CLI, web, desktop, and agents share a single core (no logic duplication)
+- **AI-directed development** — every project built by directing agents, not by writing the code by hand
+- **Local-first** — everything runs without cloud dependencies or API keys
+- **Structural over advisory** — guardrails enforced by the type system, not by docs you hope people read
+- **Documented trade-offs** — a DECISIONS.md in every repo: what was chosen, what was rejected, and why
 
 ---
 
