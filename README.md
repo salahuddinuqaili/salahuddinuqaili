@@ -2,9 +2,9 @@
   <img src="https://raw.githubusercontent.com/salahuddinuqaili/salahuddinuqaili/main/banner.svg" alt="Salahuddin Uqaili" width="100%"/>
 </p>
 
-**Product Manager at Delivery Hero**, Berlin — logistics CX products at scale.
+**Associate Product Manager at Delivery Hero**, Berlin — logistics CX products at scale.
 
-Off the clock, I don't just *use* AI agents. **I build the factory that runs them.** I design the system — a local-first coding agent, its memory layer, an orchestrator that runs on my own GPU, and a type-checker that turns an agent's authority, cost, and lineage into compile-time facts — then direct the agents to build the pieces while I own the architecture, the guardrails, and the trade-off calls. I can't write the code by hand. I can specify it, direct it, and tell you exactly why every trade-off went the way it did.
+Off the clock, I don't just *use* AI agents — I'm **building** the factory that runs them. I've been designing the pieces of a local-first agent stack: a coding agent, its memory layer, an orchestrator that runs on my own GPU, and a type-checker that turns an agent's authority, cost, and lineage into compile-time facts. I direct the agents to build it while I own the architecture, the guardrails, and the trade-off calls. I can't write the code by hand — but I can specify it, direct it, and tell you exactly why every trade-off went the way it did.
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -14,24 +14,26 @@ Off the clock, I don't just *use* AI agents. **I build the factory that runs the
 
 ---
 
-### The system I architected
+### The system I'm architecting
 
-A private, local-first agent stack I designed and directed — happy to walk through it in a conversation:
+A private, local-first agent stack I've been designing and directing — happy to walk through it in a conversation:
 
 - **The agent** — an LLM-agnostic, approval-gated coding agent in Rust: multi-provider routing with logged decisions, a fallback tool-protocol for models without native tool use, git-shadow-ref checkpoints and one-command undo.
 - **The memory** — a git-backed, local-first knowledge base and shared-memory contract that agents read and write over MCP.
 - **The guardrail** — an experimental agentic language whose type-checker won't let an agent compile if it exceeds the authority or budget it was granted. Authority, cost, and lineage become *compile-time facts*, not runtime hopes.
 - **The orchestrator** — a worktree-per-agent design that assigns work to a bench of specialists, with cost accounting and provenance built in.
 
-### The proof it runs
+### The explorations behind it
 
-**[llm-autobench](https://github.com/salahuddinuqaili/llm-autobench)** — Autonomous benchmarking harness: discovers, pulls, benchmarks, judges, and deletes local models on a cron on my own RTX 5070. The commit history *is* the pipeline running itself.
+Public repos where I've built out pieces of the idea:
 
-**[tether](https://github.com/salahuddinuqaili/tether)** — An iPhone PWA that talks to my local + cloud models over Tailscale. No backend, no App Store, no Mac — editor, GitHub commit, and multi-chat, all browser-direct.
+**[llm-autobench](https://github.com/salahuddinuqaili/llm-autobench)** — Autonomous benchmarking harness: a 7-step discover → pull → bench → judge → report → delete → commit cycle on a cron, using a free NVIDIA NIM judge to keep my RTX 5070 free for the model under test. The commit history *is* the pipeline running itself.
 
-**[changelog-genie](https://github.com/salahuddinuqaili/changelog-genie)** — Commits and PRs → clean, categorized changelogs via local LLMs. Packaged as a GitHub Action; nothing leaves your machine.
+**[tether](https://github.com/salahuddinuqaili/tether)** — An installable iPhone PWA that talks to my local + cloud models over Tailscale. No backend, no App Store, no Mac — editor, GitHub commit, and multi-chat, all browser-direct.
 
-**[benchviz](https://github.com/salahuddinuqaili/benchviz)** — Turns messy LLM benchmark JSON into a static, interactive dashboard: leaderboard, capability radar, model×task heatmap, regression detection. Zero server, zero API keys.
+**[changelog-genie](https://github.com/salahuddinuqaili/changelog-genie)** — Commits and PRs → clean, categorized changelogs via local LLMs. Packaged as a GitHub Action, 51 tests; nothing leaves your machine.
+
+**[benchviz](https://github.com/salahuddinuqaili/benchviz)** — Turns messy LLM benchmark JSON into a static dashboard: leaderboard, capability radar, model×task heatmap, and regression detection that flags any drop >5%. One dependency, pytest-green on Python 3.9 / 3.11 / 3.12, zero API keys.
 
 **[neon-protocol-ide](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE that opens a codebase as an interactive architecture map with conversational AI. 21 releases; IPC as the security boundary so API keys never touch the renderer.
 
