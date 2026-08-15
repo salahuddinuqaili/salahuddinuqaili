@@ -2,53 +2,63 @@
   <img src="https://raw.githubusercontent.com/salahuddinuqaili/salahuddinuqaili/main/banner.svg" alt="Salahuddin Uqaili" width="100%"/>
 </p>
 
-**Associate Product Manager at Delivery Hero**, Berlin — logistics CX products at scale.
+I build AI developer tooling by directing coding agents: MCP tooling, local model infrastructure, and the developer experience around both. Product manager at Delivery Hero in Berlin by day, working on logistics CX at scale.
 
-Off the clock, I don't just *use* AI agents — I'm **building** the factory that runs them. I've been designing the pieces of a local-first agent stack: a coding agent, its memory layer, an orchestrator that runs on my own GPU, and a type-checker that turns an agent's authority, cost, and lineage into compile-time facts. I direct the agents to build it while I own the architecture, the guardrails, and the trade-off calls. I can't write the code by hand — but I can specify it, direct it, and tell you exactly why every trade-off went the way it did.
+I don't write the code by hand. I specify the architecture, set the guardrails, direct the agents that implement it, and own every trade-off call. The six projects below each carry a DECISIONS.md recording what was chosen, what was rejected, and why, so you can audit the reasoning rather than take my word for it.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Anthropic-191919?style=for-the-badge&logo=anthropic&logoColor=white" alt="Anthropic"/>
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
+  <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama"/>
+  <img src="https://img.shields.io/badge/MCP-1F1F1F?style=for-the-badge&logo=modelcontextprotocol&logoColor=white" alt="Model Context Protocol"/>
+  <img src="https://img.shields.io/badge/NVIDIA-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="NVIDIA"/>
+</p>
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,rust,typescript,react,tauri,electron,docker,github&theme=dark" />
+    <img src="https://skillicons.dev/icons?i=python,rust,typescript,tauri,docker&theme=dark" alt="Python, Rust, TypeScript, Tauri, Docker"/>
   </a>
 </p>
 
 ---
 
-### The system I'm architecting
+### What I build
 
-A private, local-first agent stack I've been designing and directing — happy to walk through it in a conversation:
+**[mcp-studio](https://github.com/salahuddinuqaili/mcp-studio)** is Postman and ESLint for MCP servers. An interactive playground for exploring and testing Model Context Protocol servers, plus a compliance scanner that catches spec violations before a client ever sees them.
 
-- **The agent** — an LLM-agnostic, approval-gated coding agent in Rust: multi-provider routing with logged decisions, a fallback tool-protocol for models without native tool use, git-shadow-ref checkpoints and one-command undo.
-- **The memory** — a git-backed, local-first knowledge base and shared-memory contract that agents read and write over MCP.
-- **The guardrail** — an experimental agentic language whose type-checker won't let an agent compile if it exceeds the authority or budget it was granted. Authority, cost, and lineage become *compile-time facts*, not runtime hopes.
-- **The orchestrator** — a worktree-per-agent design that assigns work to a bench of specialists, with cost accounting and provenance built in.
+**[llm-autobench](https://github.com/salahuddinuqaili/llm-autobench)** is an autonomous benchmarking harness for local models: a seven-step discover, pull, bench, judge, report, delete, commit cycle running on a cron. It uses a free NVIDIA NIM judge so my RTX 5070 stays free for the model under test. The commit history is the pipeline running itself.
 
-### The explorations behind it
+**[neon-protocol-ide](https://github.com/salahuddinuqaili/neon-protocol-ide)** opens a codebase as an interactive architecture map with conversational AI on top. 21 releases. IPC is the security boundary, so API keys never reach the renderer.
 
-Public repos where I've built out pieces of the idea:
+**[skillich](https://github.com/salahuddinuqaili/skillich)** rates 1,028 skills across 88 roles for AI impact. Python SDK, MCP server, OpenAI and Anthropic adapters, CLI. Agent-first by design, with a [browsable action plan](https://salahuddinuqaili.github.io/skillich/) on the web.
 
-**[llm-autobench](https://github.com/salahuddinuqaili/llm-autobench)** — Autonomous benchmarking harness: a 7-step discover → pull → bench → judge → report → delete → commit cycle on a cron, using a free NVIDIA NIM judge to keep my RTX 5070 free for the model under test. The commit history *is* the pipeline running itself.
+**[tether](https://github.com/salahuddinuqaili/tether)** is an installable iPhone PWA that talks to my local and cloud models over Tailscale. No backend, no App Store, no Mac. Editor, GitHub commits, and multi-chat, all browser-direct.
 
-**[tether](https://github.com/salahuddinuqaili/tether)** — An installable iPhone PWA that talks to my local + cloud models over Tailscale. No backend, no App Store, no Mac — editor, GitHub commit, and multi-chat, all browser-direct.
+**[pulse](https://github.com/salahuddinuqaili/pulse)** monitors a GPU that both games and runs local models, in Rust and Tauri 2. It shows what the card is doing and what it can still take on.
 
-**[changelog-genie](https://github.com/salahuddinuqaili/changelog-genie)** — Commits and PRs → clean, categorized changelogs via local LLMs. Packaged as a GitHub Action, 51 tests; nothing leaves your machine.
+*Also public: [rag-starter](https://github.com/salahuddinuqaili/rag-starter), a local RAG pipeline you can stand up in fifteen minutes with no frameworks.*
 
-**[benchviz](https://github.com/salahuddinuqaili/benchviz)** — Turns messy LLM benchmark JSON into a static dashboard: leaderboard, capability radar, model×task heatmap, and regression detection that flags any drop >5%. One dependency, pytest-green on Python 3.9 / 3.11 / 3.12, zero API keys.
+### The stack behind them
 
-**[neon-protocol-ide](https://github.com/salahuddinuqaili/neon-protocol-ide)** — Desktop IDE that opens a codebase as an interactive architecture map with conversational AI. 21 releases; IPC as the security boundary so API keys never touch the renderer.
+The projects above are explorations of pieces of one idea: a local-first agent stack I keep private. Happy to walk through it in a conversation.
 
-**[skillich](https://github.com/salahuddinuqaili/skillich)** — 1,028 skills across 88 roles, each rated for AI impact. Python SDK + MCP server + OpenAI/Anthropic adapters + CLI. Agent-first by design.
+- **The agent.** An LLM-agnostic, approval-gated coding agent in Rust. Multi-provider routing with logged decisions, a fallback tool-protocol for models without native tool use, git-shadow-ref checkpoints and one-command undo.
+- **The memory.** A git-backed knowledge base that agents read and write as shared memory over MCP.
+- **The guardrail.** An experimental agentic language whose type-checker refuses to compile an agent that exceeds the authority or budget it was granted. Authority, cost, and lineage become compile-time facts rather than runtime hopes.
+- **The orchestrator.** A worktree-per-agent design that assigns work to a bench of specialists, with cost accounting and provenance built in.
 
-*Also public: [pulse](https://github.com/salahuddinuqaili/pulse) (Rust/Tauri GPU monitor), [rag-starter](https://github.com/salahuddinuqaili/rag-starter), [mcp-studio](https://github.com/salahuddinuqaili/mcp-studio), [sprint-narrator](https://github.com/salahuddinuqaili/sprint-narrator), [decisionlog](https://github.com/salahuddinuqaili/decisionlog).*
+### Credentials
 
----
+- **Anthropic Academy (2026):** AI Fluency Framework and Foundations, Claude Code in Action, AI Fluency for Builders, Introduction to Subagents, Teaching AI Fluency
+- **Selected as an AI Champion at Delivery Hero** (top 2% of the company), certification September 2026
+- Member of Delivery Hero's AI Guild
 
-### What ties them together
+### How I work
 
-- **AI-directed development** — every project built by directing agents, not by writing the code by hand
-- **Local-first** — everything runs without cloud dependencies or API keys
-- **Structural over advisory** — guardrails enforced by the type system, not by docs you hope people read
-- **Documented trade-offs** — a DECISIONS.md in every repo: what was chosen, what was rejected, and why
+- **Agent-directed.** Every project here was built by directing agents, not by typing the implementation.
+- **Local-first.** It runs on your own machine, without cloud dependencies or API keys.
+- **Structural over advisory.** Guardrails enforced by the type system, not by docs you hope people read.
+- **Documented trade-offs.** A DECISIONS.md in every featured repo: what was chosen, what was rejected, why.
 
 ---
 
