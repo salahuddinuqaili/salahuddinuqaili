@@ -38,21 +38,6 @@ I don't write the code by hand. I specify the architecture, set the guardrails, 
 
 *Also public: [rag-starter](https://github.com/salahuddinuqaili/rag-starter), a local RAG pipeline you can stand up in fifteen minutes with no frameworks.*
 
-### The stack behind them
-
-The projects above are explorations of pieces of one idea: a local-first agent stack I keep private. Happy to walk through it in a conversation.
-
-- **The agent.** An LLM-agnostic, approval-gated coding agent in Rust. Multi-provider routing with logged decisions, a fallback tool-protocol for models without native tool use, git-shadow-ref checkpoints and one-command undo.
-- **The memory.** A git-backed knowledge base that agents read and write as shared memory over MCP.
-- **The guardrail.** An experimental agentic language whose type-checker refuses to compile an agent that exceeds the authority or budget it was granted. Authority, cost, and lineage become compile-time facts rather than runtime hopes.
-- **The orchestrator.** A worktree-per-agent design that assigns work to a bench of specialists, with cost accounting and provenance built in.
-
-### Credentials
-
-- **Anthropic Academy (2026):** AI Fluency Framework and Foundations, Claude Code in Action, AI Fluency for Builders, Introduction to Subagents, Teaching AI Fluency
-- **Selected as an AI Champion at Delivery Hero** (top 2% of the company), certification September 2026
-- Member of Delivery Hero's AI Guild
-
 ### How I work
 
 - **Agent-directed.** Every project here was built by directing agents, not by typing the implementation.
