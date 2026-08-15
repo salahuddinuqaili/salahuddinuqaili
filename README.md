@@ -4,7 +4,7 @@
 
 I build AI developer tooling by directing coding agents: MCP tooling, local model infrastructure, and the developer experience around both. Product manager at Delivery Hero in Berlin by day, working on logistics CX at scale.
 
-I don't write the code by hand. I specify the architecture, set the guardrails, direct the agents that implement it, and own every trade-off call. The six projects below each carry a DECISIONS.md recording what was chosen, what was rejected, and why, so you can audit the reasoning rather than take my word for it.
+I don't write the code by hand. I specify the architecture, set the guardrails, direct the agents that implement it, and own every trade-off call. The six projects below each carry a decision log recording what was chosen, what was rejected, and why, so you can audit the reasoning rather than take my word for it.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Anthropic-191919?style=for-the-badge&logo=anthropic&logoColor=white" alt="Anthropic"/>
@@ -36,14 +36,14 @@ I don't write the code by hand. I specify the architecture, set the guardrails, 
 
 **[pulse](https://github.com/salahuddinuqaili/pulse)** monitors a GPU that both games and runs local models, in Rust and Tauri 2. It shows what the card is doing and what it can still take on.
 
-*Also public: [rag-starter](https://github.com/salahuddinuqaili/rag-starter), a local RAG pipeline you can stand up in fifteen minutes with no frameworks.*
+*Also public: [rag-starter](https://github.com/salahuddinuqaili/rag-starter), a local RAG pipeline over your own documents. FastAPI and React, ChromaDB, Ollama, plain Python you can read.*
 
 ### How I work
 
 - **Agent-directed.** Every project here was built by directing agents, not by typing the implementation.
-- **Local-first.** It runs on your own machine, without cloud dependencies or API keys.
-- **Structural over advisory.** Guardrails enforced by the type system, not by docs you hope people read.
-- **Documented trade-offs.** A DECISIONS.md in every featured repo: what was chosen, what was rejected, why.
+- **Local-first by default.** Your hardware, your documents. Where a cloud model earns its place, like the free judge in llm-autobench, that is a deliberate call and it is written down.
+- **Structural over advisory.** Constraints enforced by the tool, not by docs you hope people read.
+- **Documented trade-offs.** A decision log in every featured repo: what was chosen, what was rejected, why.
 
 ---
 
