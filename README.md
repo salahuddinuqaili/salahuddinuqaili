@@ -2,9 +2,9 @@
   <img src="https://raw.githubusercontent.com/salahuddinuqaili/salahuddinuqaili/main/banner.svg" alt="Salahuddin Uqaili" width="100%"/>
 </p>
 
-I build AI developer tooling by directing coding agents: MCP tooling, local model infrastructure, and the developer experience around both. Product manager at Delivery Hero in Berlin by day, working on logistics CX at scale.
+I build and evaluate AI systems by directing coding agents: MCP tooling, local model infrastructure, human-reviewed workflows, and the developer experience around them. Product manager at Delivery Hero in Berlin by day, working on logistics CX at scale.
 
-I don't write the code by hand. I specify the architecture, set the guardrails, direct the agents that implement it, and own every trade-off call. The six projects below each carry a decision log recording what was chosen, what was rejected, and why, so you can audit the reasoning rather than take my word for it.
+I don't write the code by hand. I specify the architecture, set the guardrails, direct the agents that implement it, and own every trade-off call. The featured projects below each carry a decision log recording what was chosen, what was rejected, and why, so you can audit the reasoning rather than take my word for it.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Anthropic-191919?style=for-the-badge&logo=anthropic&logoColor=white" alt="Anthropic"/>
@@ -24,7 +24,11 @@ I don't write the code by hand. I specify the architecture, set the guardrails, 
 
 ### What I build
 
-**[mcp-studio](https://github.com/salahuddinuqaili/mcp-studio)** is Postman and ESLint for MCP servers. An interactive playground for exploring and testing Model Context Protocol servers, plus a compliance scanner that catches spec violations before a client ever sees them.
+**[legal-ai-eval-lab](https://github.com/salahuddinuqaili/legal-ai-eval-lab)** is an interactive case study in evaluated, source-grounded legal AI. It compares naive and guardrailed retrieval across 15 synthetic cases, exposing the evidence, failed gate, mitigation, and required human action instead of treating fluent output as trustworthy. [Live demo](https://salahuddinuqaili.github.io/legal-ai-eval-lab/).
+
+**[bar-loop](https://github.com/salahuddinuqaili/bar-loop)** is an AI implementation framework for law firms, built on the assumption that someone will eventually ask you to justify it. Set a bar a partner would sign off, run builder and adversarial critic pairs, compare them blind, and refuse to ship on six hard gates — with jurisdiction packs for UK, US and EU.
+
+**[mcp-rubric](https://github.com/salahuddinuqaili/mcp-rubric)** is Postman and ESLint for MCP servers. An interactive playground for exploring and testing Model Context Protocol servers, plus a compliance scanner that catches spec violations before a client ever sees them.
 
 **[llm-autobench](https://github.com/salahuddinuqaili/llm-autobench)** is an autonomous benchmarking harness for local models: a seven-step discover, pull, bench, judge, report, delete, commit cycle running on a cron. It uses a free NVIDIA NIM judge so my RTX 5070 stays free for the model under test. The commit history is the pipeline running itself.
 
